@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "epsilon-carpet",
+  "version": "2021.4.11",
+
+  "name": "EpsilonSMP Carpet Addon",
+  "description": "A carpet extension made for EpsilonSMP in 1.16.4",
+  "authors": [
+    "JohanVonElectrum",
+    "FracturedCode"
+  ],
+  "contact": {
+    "homepage": "https://www.epsilonsmp.xyz/",
+    "sources": "https://github.com/EpsilonSMP/Epsilon-Carpet"
+  },
+
+  "license": "MIT",
+  "icon": "assets/EpsilonCarpet/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+    ]
+  },
+  "mixins": [
+    "EpsilonCarpet.mixins.json"
+  ],
+  "accessWidener": "EpsilonCarpet.accesswidener",
+
+  "depends": {
+    "minecraft": "1.16.x",
+    "fabricloader": ">=0.10.0",
+    "carpet": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "parent": "carpet"
+    }
+  }
+}
