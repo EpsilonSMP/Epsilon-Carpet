@@ -1,0 +1,33 @@
+{
+  "required": true,
+  "package": "xyz.epsilonsmp.EpsilonCarpet.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "xyz.epsilonsmp.epsiloncarpet.mixins.EndSpikeFeatureMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.FightManagerMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.PlayerManagerMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.EndGatewayBlockEntityMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.EndGatewayMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.ServerWorldMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.MinecraftClientMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.MinecraftServerMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.ServerChunkManagerMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.ShulkerEntityMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.FishEntityMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.AbstractFireBlockMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.BlockMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.HeightmapMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.ServerScoreboardMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.ExplosionMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.ServerPlayerEntityMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.TntEntityMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.AbstractBlockMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.ShulkerBoxBlockEntityMixin",
+    "xyz.epsilonsmp.epsiloncarpet.mixins.ShulkerBoxSlotMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
