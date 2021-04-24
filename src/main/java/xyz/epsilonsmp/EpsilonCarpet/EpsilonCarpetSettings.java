@@ -5,6 +5,7 @@ import carpet.settings.Rule;
 import carpet.settings.Validator;
 import net.minecraft.server.command.ServerCommandSource;
 
+import javax.net.ssl.SSLContext;
 import java.util.Arrays;
 
 import static carpet.settings.RuleCategory.*;
@@ -12,6 +13,10 @@ import static carpet.settings.RuleCategory.*;
 public class EpsilonCarpetSettings {
     public static final String EpsilonCarpetSettingsCategory = "epsilon-carpet";
     public static final String EndSettingsCategory = "epsilon-carpet-end-features";
+    public static final String CannonSettingsCategory = "epsilon-carpet-cannon-features";
+    public static final String ScoreboardSettingsCategory = "epsilon-carpet-scoreboard-features";
+    public static final String EntitySettingsCategory = "epsilon-carpet-entity-features";
+    public static final String PlayerTweakSettingsCategory = "epsilon-carpet-player-tweaks";
 
     /* ===== Begin TheEnd Rules ===== */
 
@@ -41,7 +46,7 @@ public class EpsilonCarpetSettings {
     private static final String[] keepProjectilesTickedOptions = new String[] { "default", "all", "player-only", "enderpearls" };
     @Rule(
             desc = "Toggle for projectiles are ticked the whole time.",
-            category = { EpsilonCarpetSettingsCategory, FEATURE },
+            category = { EpsilonCarpetSettingsCategory, FEATURE, CannonSettingsCategory },
             options = { "default", "all", "player-only", "enderpearls" },
             validate = { keepProjectilesTickedValidator.class }
     )
@@ -60,13 +65,13 @@ public class EpsilonCarpetSettings {
 
     @Rule(
             desc = "Debug TNT momentum transfer to enderpearls in console.",
-            category = { EpsilonCarpetSettingsCategory, CREATIVE }
+            category = { EpsilonCarpetSettingsCategory, CREATIVE, CannonSettingsCategory }
     )
     public static boolean logTNTMomentum = false;
 
     @Rule(
             desc = "TNT optimized for large amounts in Cannons.",
-            category = { EpsilonCarpetSettingsCategory, SURVIVAL, OPTIMIZATION }
+            category = { EpsilonCarpetSettingsCategory, SURVIVAL, OPTIMIZATION, CannonSettingsCategory }
     )
     public static boolean ftlTNT = false;
 
@@ -116,13 +121,13 @@ public class EpsilonCarpetSettings {
 
     @Rule(
             desc = "Bots don't appear on scoreboards and do not count in the total.",
-            category = { EpsilonCarpetSettingsCategory, SURVIVAL, FEATURE }
+            category = { EpsilonCarpetSettingsCategory, SURVIVAL, FEATURE, ScoreboardSettingsCategory }
     )
     public static boolean filterBotsInScores = false;
 
     @Rule(
             desc = "The scoreboard total appears on the scoreboard.",
-            category = { EpsilonCarpetSettingsCategory, SURVIVAL, FEATURE }
+            category = { EpsilonCarpetSettingsCategory, SURVIVAL, FEATURE, ScoreboardSettingsCategory}
     )
     public static boolean totalScore = false;
 
@@ -132,13 +137,13 @@ public class EpsilonCarpetSettings {
 
     @Rule(
             desc = "Force shulkers to teleport when stay in invalid positions.",
-            category = { EpsilonCarpetSettingsCategory, EndSettingsCategory, SURVIVAL, FEATURE }
+            category = { EpsilonCarpetSettingsCategory, EndSettingsCategory, SURVIVAL, FEATURE, EntitySettingsCategory }
     )
     public static boolean forceShulkerTeleport = false;
 
     @Rule(
             desc = "Fishes only can spawn between y:45 and y:63, both excluded.",
-            category = { EpsilonCarpetSettingsCategory, SURVIVAL, BUGFIX }
+            category = { EpsilonCarpetSettingsCategory, SURVIVAL, BUGFIX, EntitySettingsCategory }
     )
     public static boolean seaLevelFishes = false;
 
@@ -162,7 +167,7 @@ public class EpsilonCarpetSettings {
 
     @Rule(
             desc = "Enables old donkey / llama dupe bug.",
-            category = { EpsilonCarpetSettingsCategory, SURVIVAL, FEATURE }
+            category = { EpsilonCarpetSettingsCategory, SURVIVAL, FEATURE, EntitySettingsCategory }
     )
     public static boolean llamaDupeExploit = false;
 
@@ -172,7 +177,7 @@ public class EpsilonCarpetSettings {
 
     @Rule(
             desc = "Backports 1.12 flint and steel behavior. Flint and steel can be used for updating observers / buds.",
-            category = { EpsilonCarpetSettingsCategory, SURVIVAL, FEATURE }
+            category = { EpsilonCarpetSettingsCategory, SURVIVAL, FEATURE, PlayerTweakSettingsCategory }
     )
     public static boolean oldFlintAndSteelBehavior = false;
 
@@ -180,7 +185,7 @@ public class EpsilonCarpetSettings {
     private static final String[] carefulBreakOptions = new String[] { "never", "always", "sneaking", "no-sneaking" };
     @Rule(
             desc = "Places the mined block in the player inventory when sneaking.",
-            category = { EpsilonCarpetSettingsCategory, SURVIVAL, FEATURE, EXPERIMENTAL },
+            category = { EpsilonCarpetSettingsCategory, SURVIVAL, FEATURE, EXPERIMENTAL, PlayerTweakSettingsCategory },
             options = { "never", "always", "sneaking", "no-sneaking" },
             validate = { carefulBreakValidator.class }
     )
@@ -205,7 +210,7 @@ public class EpsilonCarpetSettings {
 
     @Rule(
             desc = "Enable the possibility to store shulkerboxes inside shulkerboxes.",
-            category = { EpsilonCarpetSettingsCategory, SURVIVAL, FEATURE }
+            category = { EpsilonCarpetSettingsCategory, SURVIVAL, FEATURE, PlayerTweakSettingsCategory }
     )
     public static boolean shulkerInception = false;
 
