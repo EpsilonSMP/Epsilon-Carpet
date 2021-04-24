@@ -4,14 +4,14 @@ A carpet extension made for EpsilonSMP in Minecraft 1.16.x
 This is a fork of [FractalCarpetAddon](https://github.com/FracturedCode/FractalCarpetAddon). This addon may be incompatible with [carpet-addons](https://github.com/whoImT/carpet-addons).
 
 
-#EpsilonSMP carpet rules
+# EpsilonSMP carpet rules
 ## Categories
-* (TheEnd)[#theend-rules]
-* (Cannon)[#cannon-rules]
-* (Command)[#command-rules]
-* (Score)[#score-rules]
-* (Entity)[#entity-rules]
-* (PlayerTweaks)[#playertweaks]
+* [TheEnd](#TheEnd-rules)
+* [Cannon](#Cannon-rules)
+* [Command](#command-rules)
+* [Score](#score-rules)
+* [Entity](#entity-rules)
+* [PlayerTweaks](#playertweaks)
 
 ## TheEnd rules
 
@@ -178,3 +178,4 @@ Emerald ore acts as an update suppressor.
 ## Development Roadmap
 -   Passive Farms Fix
 -   Keep enderpearls traveling without loading chunks and teleport player when lands
+
