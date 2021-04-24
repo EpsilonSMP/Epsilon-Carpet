@@ -6,8 +6,9 @@
   "name": "EpsilonSMP Carpet Addon",
   "description": "A carpet extension made for EpsilonSMP in 1.16.4",
   "authors": [
-    "JohanVonElectrum",
-    "FracturedCode"
+    "Timstario",
+    "FracturedCode",
+    "JohanVonElectrum"
   ],
   "contact": {
     "homepage": "https://www.epsilonsmp.xyz/",
@@ -15,7 +16,7 @@
   },
 
   "license": "MIT",
-  "icon": "assets/EpsilonCarpet/icon.png",
+  "icon": "assets/Epsilon-Carpet/icon.png",
 
   "environment": "*",
   "entrypoints": {
@@ -23,9 +24,9 @@
     ]
   },
   "mixins": [
-    "EpsilonCarpet.mixins.json"
+    "Epsilon-Carpet.mixins.json"
   ],
-  "accessWidener": "EpsilonCarpet.accesswidener",
+  "accessWidener": "Epsilon-Carpet.accesswidener",
 
   "depends": {
     "minecraft": "1.16.x",
