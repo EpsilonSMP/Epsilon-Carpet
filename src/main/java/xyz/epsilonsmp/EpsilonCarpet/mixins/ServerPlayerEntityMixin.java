@@ -29,7 +29,7 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity implements Sc
 
     @Inject(method = "onSpawn", at = @At("HEAD"))
     public void onSpawn(CallbackInfo ci) {
-        this.sendMessage(Messenger.s("You are playing with §5" + EpsilonCarpetExtension.MOD_NAME + "§r: §5" + EpsilonCarpetExtension.MOD_ID + "-1.16.4-" + EpsilonCarpetExtension.VERSION), false);
+        this.sendMessage(Messenger.s("You are playing with §5" + EpsilonCarpetExtension.MOD_NAME + "§r: §5" + EpsilonCarpetExtension.MOD_ID + "-" + EpsilonCarpetExtension.MC_VERSION + "-" + EpsilonCarpetExtension.VERSION), false);
         if (this.hasPermissionLevel(3) && EpsilonCarpetExtension.shouldUpdate()) {
             BaseText url = Messenger.s("https://github.com/EpsilonSMP/Epsilon-Carpet/releases/latest");
             ClickEvent event = new ClickEvent(ClickEvent.Action.OPEN_URL, "https://github.com/EpsilonSMP/Epsilon-Carpet/releases/latest");
