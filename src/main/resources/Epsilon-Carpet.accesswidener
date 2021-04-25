@@ -5,3 +5,4 @@ accessible method net/minecraft/server/world/ServerChunkManager tick ()Z
 accessible class net/minecraft/util/UserCache$Entry
 accessible field net/minecraft/world/Heightmap blockPredicate Ljava/util/function/Predicate;
 accessible method net/minecraft/world/Heightmap set (III)V
+accessible class net/minecraft/entity/mob/EndermanEntity$PickUpBlockGoal

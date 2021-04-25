@@ -147,6 +147,11 @@ public class EpsilonCarpetSettings {
     )
     public static boolean seaLevelFishes = false;
 
+    @Rule (
+            desc = "When true turns off endermen griefing...except melons",
+            category = { EpsilonCarpetSettingsCategory, SURVIVAL, EntitySettingsCategory }
+    )
+    public static boolean antiEnderGriefExceptMelon = false; // fu melons
     /* Begin SpawnMaxY stuff */
     @Rule(
             desc = "Set the max value possible for heightmap. USE AT YOUR OWN RISK!",

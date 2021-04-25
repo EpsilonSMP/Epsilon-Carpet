@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "id": "epsilon-carpet",
-  "version": "2021.4.23",
+  "version": "2021.4.25",
 
-  "name": "EpsilonSMP Carpet Addon",
+  "name": "Epsilon-Carpet",
   "description": "A carpet extension made for EpsilonSMP in 1.16.5",
   "authors": [
     "Timstario",
