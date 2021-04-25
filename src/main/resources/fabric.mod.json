@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "epsilon-carpet",
-  "version": "2021.4.25",
+  "version": "2021.4.26",
 
   "name": "Epsilon-Carpet",
   "description": "A carpet extension made for EpsilonSMP in 1.16.5",
@@ -11,7 +11,7 @@
     "JohanVonElectrum"
   ],
   "contact": {
-    "homepage": "https://www.epsilonsmp.xyz/",
+    "homepage": "https://www.epsilonsmp.world/",
     "sources": "https://github.com/EpsilonSMP/Epsilon-Carpet"
   },
 
