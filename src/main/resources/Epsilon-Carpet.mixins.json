@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "xyz.epsilonsmp.EpsilonCarpet.mixins",
+  "package": "world.epsilonsmp.EpsilonCarpet.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "AbstractBlockMixin",
