@@ -135,13 +135,6 @@ Fishes only can spawn between y:45 and y:63, both excluded.
 * Required options: `true`, `false`
 * Categories: `epsilon-carpet`, `survival`, `bugfix`
 
-### maxHeightmap
-Set the max value possible for heightmap. USE AT YOUR OWN RISK!
-* Type: `integer`
-* Default value: `255`
-* Valid options: `0-255`
-* Categories: `epsilon-carpet`, `survival`, `experimental`, `optimization`
-
 ### llamaDupeExploit
 Enables old donkey / llama dupe bug.
 * Type: `boolean`
