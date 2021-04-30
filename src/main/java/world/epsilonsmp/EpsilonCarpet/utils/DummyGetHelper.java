@@ -9,8 +9,7 @@ import world.epsilonsmp.EpsilonCarpet.EpsilonCarpetSettings;
 public class DummyGetHelper
 {
     public static Comparable<?> dummyGetMethod(BlockState blockState, Property<Direction.Axis> property) {
-        if (EpsilonCarpetSettings.teleportToPoiWithoutPortals && !blockState.contains(Properties.HORIZONTAL_AXIS))
-            return Direction.Axis.Z;
-        return blockState.get(property);
+        return EpsilonCarpetSettings.teleportToPoiWithoutPortals && !blockState.contains(Properties.HORIZONTAL_AXIS) ?
+                Direction.Axis.Z : blockState.get(property);
     }
 }

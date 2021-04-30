@@ -40,9 +40,7 @@ public abstract class ServerWorldMixin extends World {
             )
     )
     private boolean conditionAdder(Entity entity) {
-        return EpsilonCarpetSettings.forceLoadEnderPearls ?
-                (entity.teleportRequested() || (entity instanceof EnderPearlEntity)) :
-                entity.teleportRequested();
+        return entity.teleportRequested() || (EpsilonCarpetSettings.forceLoadEnderPearls && (entity instanceof EnderPearlEntity));
     }
 
     @Redirect(
@@ -53,8 +51,7 @@ public abstract class ServerWorldMixin extends World {
             )
     )
     public boolean onShouldTickEntity(ServerChunkManager serverChunkManager, Entity entity) {
-        if (EpsilonCarpetSettings.forceLoadEnderPearls && (entity instanceof EnderPearlEntity))
-            return true;
-        return serverChunkManager.shouldTickEntity(entity);
+        return (EpsilonCarpetSettings.forceLoadEnderPearls && (entity instanceof EnderPearlEntity)) ||
+                serverChunkManager.shouldTickEntity(entity);
     }
 }
