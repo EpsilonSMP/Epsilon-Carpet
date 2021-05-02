@@ -14,7 +14,7 @@ public class EpsilonCarpetExtension implements CarpetExtension {
 
     public static final String MOD_NAME = "Epsilon-Carpet";
     public static final String MOD_ID = "epsilon-carpet";
-    public static final String VERSION = "2021.4.26";
+    public static final String VERSION = "2021.5.2";
     public static final String MC_VERSION = "1.16.5";
 
     public static void noop() {}
