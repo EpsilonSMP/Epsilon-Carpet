@@ -42,26 +42,14 @@ public class EpsilonCarpetSettings {
 
     /* ===== Begin Cannon Rules ===== */
 
-    /* Begin keepProjectilesTicked stuff */
-    private static final String[] keepProjectilesTickedOptions = new String[] { "default", "all", "player-only", "enderpearls" };
+
     @Rule(
-            desc = "Toggle for projectiles are ticked the whole time.",
-            category = { EpsilonCarpetSettingsCategory, FEATURE, CannonSettingsCategory },
-            options = { "default", "all", "player-only", "enderpearls" },
-            validate = { keepProjectilesTickedValidator.class }
+            desc = "Prevents ender pearls from getting deleted when they move into unloaded chunks",
+            extra = {"This also means that ender pearls load chunks",
+                    "Merged with keepEnderPearlsTicked from carpet-addons by whoImT"},
+            category = {EpsilonCarpetSettingsCategory,SURVIVAL, EXPERIMENTAL}
     )
-    public static String keepProjectilesTicked = "default";
-
-    private static class keepProjectilesTickedValidator extends Validator<String> {
-
-        @Override
-        public String validate(ServerCommandSource serverCommandSource, ParsedRule<String> parsedRule, String s, String s2) {
-            if ((serverCommandSource == null || parsedRule.get().equals(s)) && Arrays.asList(keepProjectilesTickedOptions).contains(s))
-                keepProjectilesTicked = s;
-            return s;
-        }
-    }
-    /* End keepProjectilesTicked stuff */
+    public static boolean forceLoadEnderPearls = false;
 
     @Rule(
             desc = "Debug TNT momentum transfer to enderpearls in console.",
@@ -74,6 +62,30 @@ public class EpsilonCarpetSettings {
             category = { EpsilonCarpetSettingsCategory, SURVIVAL, OPTIMIZATION, CannonSettingsCategory }
     )
     public static boolean ftlTNT = false;
+
+    @Rule(
+            desc = "Changes the distance projectiles check for collisions. If set to 0 all Blocks to the destination will be checked which is the Vanilla behaviour.",
+            extra = {"This reduces lag for fast projectiles. In 1.12 the value was 200."},
+            category = {EXPERIMENTAL,OPTIMIZATION, "carpetaddons"},
+            options = {"0","200"},
+            strict = false,
+            validate = {projectileRaycastLengthValidator.class}
+    )
+    public static int projectileRaycastLength = 0;
+
+    private static class projectileRaycastLengthValidator extends Validator<Integer> {
+
+        @Override
+        public Integer validate(ServerCommandSource serverCommandSource, ParsedRule<Integer> parsedRule, Integer newValue, String s) {
+            return newValue >= 0 ? newValue : null;
+        }
+
+        @Override
+        public String description() {
+            return "You must choose a value greater or equal to 0";
+        }
+
+    }
 
     /* ===== End Cannon Rules ===== */
 
@@ -136,6 +148,12 @@ public class EpsilonCarpetSettings {
     /* ===== Begin Entity Rules ===== */
 
     @Rule(
+            desc = "Prevents phantoms from spawning if mobcap is full",
+            category = {EpsilonCarpetSettingsCategory,SURVIVAL, EXPERIMENTAL}
+    )
+    public static boolean phantomsCapped = false;
+
+    @Rule(
             desc = "Force shulkers to teleport when stay in invalid positions.",
             category = { EpsilonCarpetSettingsCategory, EndSettingsCategory, SURVIVAL, FEATURE, EntitySettingsCategory }
     )
@@ -152,23 +170,6 @@ public class EpsilonCarpetSettings {
             category = { EpsilonCarpetSettingsCategory, SURVIVAL, EntitySettingsCategory }
     )
     public static boolean antiEnderGriefExceptMelon = false; // fu melons
-    /* Begin SpawnMaxY stuff */
-    @Rule(
-            desc = "Set the max value possible for heightmap. USE AT YOUR OWN RISK!",
-            category = { EpsilonCarpetSettingsCategory, SURVIVAL, EXPERIMENTAL, OPTIMIZATION },
-            strict = false,
-            validate = { SpawnMaxYValidator.class }
-    )
-    public static int maxHeightmap = 255;
-
-    private static class SpawnMaxYValidator extends Validator<Integer> {
-        @Override
-        public Integer validate(ServerCommandSource serverCommandSource, ParsedRule<Integer> parsedRule, Integer integer, String s) {
-            return integer >= 0 && integer < 256 ? integer : null;
-
-        }
-    }
-    /* End SpawnMaxY stuff */
 
     @Rule(
             desc = "Enables old donkey / llama dupe bug.",
@@ -220,5 +221,12 @@ public class EpsilonCarpetSettings {
     public static boolean shulkerInception = false;
 
     /* ===== End PlayerTweaks Rules =====*/
+
+    @Rule(
+            desc = "Re-adds teleporting to portal POIs without portal blocks",
+            extra = {"Update suppressor go brrr"},
+            category = {EpsilonCarpetSettingsCategory,SURVIVAL, EXPERIMENTAL}
+    )
+    public static boolean teleportToPoiWithoutPortals = false;
 
 }

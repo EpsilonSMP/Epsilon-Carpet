@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "epsilon-carpet",
-  "version": "2021.4.26",
+  "version": "2021.5.2",
 
   "name": "Epsilon-Carpet",
   "description": "A carpet extension made for EpsilonSMP in 1.16.5",

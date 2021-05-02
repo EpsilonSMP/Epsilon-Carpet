@@ -38,12 +38,20 @@ Entities do not generate the obsidian platform in the end, except players.
 
 ## Cannon rules
 
-### keepProjectilesTicked
-Keep projectiles ticked in unloaded chunks.
-* Type: `string`
-* Default value: `default`
-* Required options: `default`, `all`, `player-only`, `enderpearls`
-* Categories: `epsilon-carpet`, `feature`
+### forceLoadEnderPearls
+Keep ender pearls ticked in unloaded chunks.
+* Type: `boolean`
+* Default value: `false`
+* Required options: `true`, `false`
+* Categories: `epsilon-carpet`, `experimental`
+
+### projectileRaycastLength
+Changes the distance projectiles check for collisions. If set to 0 all Blocks to the destination will be checked which is the Vanilla behaviour.
+This reduces lag for fast projectiles. In 1.12 the value was 200.
+* Type: `int`  
+* Default value: `0`  
+* Suggested options: `0`, `200`  
+* Categories: `epsilon-carpet`, `optimazation`, `experimental`
 
 ### logTNTMomentum
 Debug TNT momentum transfer to enderpearls in console.
@@ -121,6 +129,13 @@ The scoreboard total appears on the scoreboard.
 
 ## Entity rules
 
+### phantomsCapped
+Prevents phantoms from spawning if mobcap is full
+* Type: `boolean`
+* Default value: `false`
+* Required options: `true`, `false`
+* Categories: `epsilon-carpet`,`survival`, `experimental`
+
 ### forceShulkerTeleport
 Force shulkers to teleport when stay in invalid positions.
 * Type: `boolean`
@@ -134,13 +149,6 @@ Fishes only can spawn between y:45 and y:63, both excluded.
 * Default value: `false`
 * Required options: `true`, `false`
 * Categories: `epsilon-carpet`, `survival`, `bugfix`
-
-### maxHeightmap
-Set the max value possible for heightmap. USE AT YOUR OWN RISK!
-* Type: `integer`
-* Default value: `255`
-* Valid options: `0-255`
-* Categories: `epsilon-carpet`, `survival`, `experimental`, `optimization`
 
 ### llamaDupeExploit
 Enables old donkey / llama dupe bug.
@@ -171,6 +179,13 @@ Emerald ore acts as an update suppressor.
 * Default value: `false`
 * Required options: `false`, `true`
 * Categories: `epsilon-carpet`, `creative`
+
+### teleportToPoiWithoutPortals
+Re-adds teleporting to portal POIs without portal blocks
+* Type: `boolean`
+* Default value: `false`
+* Required options: `true`, `false`
+* Categories: `epsilon-carpet`,`survival`, `experimental`
 
 ## Features in Development
 - Experimental ender pearl ticking for cannons
