@@ -150,6 +150,13 @@ Fishes only can spawn between y:45 and y:63, both excluded.
 * Required options: `true`, `false`
 * Categories: `epsilon-carpet`, `survival`, `bugfix`
 
+### antiEnderGriefExceptMelon
+Prevent endermans griefing blocks except melons
+* Type: `boolean`
+* Default value: `false`
+* Required options: `true`, `false`
+* Categories: `epsilon-carpet`, `survival`, `feature`
+
 ### llamaDupeExploit
 Enables old donkey / llama dupe bug.
 * Type: `boolean`
