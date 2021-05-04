@@ -20,7 +20,6 @@
     "PortalForcerMixin",
     "ProjectileUtilMixin",
     "ServerChunkManagerMixin",
-    "ServerPlayerEntityMixin",
     "ServerScoreboardMixin",
     "ServerWorldMixin",
     "ShulkerBoxBlockEntityMixin",

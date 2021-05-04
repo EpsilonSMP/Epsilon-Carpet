@@ -4,11 +4,7 @@ import carpet.CarpetExtension;
 import carpet.CarpetServer;
 import com.mojang.brigadier.CommandDispatcher;
 import world.epsilonsmp.EpsilonCarpet.commands.*;
-import world.epsilonsmp.EpsilonCarpet.utils.HttpHelper;
-import world.epsilonsmp.EpsilonCarpet.commands.*;
 import net.minecraft.server.command.ServerCommandSource;
-
-import java.time.Instant;
 
 public class EpsilonCarpetExtension implements CarpetExtension {
 
@@ -37,15 +33,6 @@ public class EpsilonCarpetExtension implements CarpetExtension {
         CommandSignal.register(dispatcher);
         CommandComputation.register(dispatcher);
         CommandBatch.register(dispatcher);
-    }
-
-    private static Instant lastUpdateCheck = Instant.MIN;
-    public static boolean shouldUpdate() {
-        Instant now = Instant.now();
-        if (lastUpdateCheck.plusSeconds(3600).isAfter(now))
-            return false;
-        lastUpdateCheck = now;
-        return !EpsilonCarpetExtension.VERSION.equals(HttpHelper.getLatestRelease());
     }
 
 }
