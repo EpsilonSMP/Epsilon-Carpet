@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(TntEntity.class)
 public abstract class TntEntityMixin extends Entity implements TntEntityInterface {
 
-    @Shadow public abstract int getFuseTimer();
+    @Shadow public abstract int getFuse();
 
     private int mergedTNT = 1;
 
@@ -28,9 +28,9 @@ public abstract class TntEntityMixin extends Entity implements TntEntityInterfac
         if (EpsilonCarpetSettings.ftlTNT) {
             for (Entity entity : this.world.getOtherEntities(this, this.getBoundingBox())) {
                 if (entity instanceof TntEntity)
-                    if (entity.getVelocity().equals(this.getVelocity()) && entity.getPos().equals(this.getPos()) && ((TntEntity) entity).getFuseTimer() == getFuseTimer()) {
+                    if (entity.getVelocity().equals(this.getVelocity()) && entity.getPos().equals(this.getPos()) && ((TntEntity) entity).getFuse() == getFuse()) {
                         mergedTNT += ((TntEntityInterface) entity).getMergedTNT();
-                        entity.remove();
+                        entity.remove(RemovalReason.DISCARDED);
                     }
             }
         }
