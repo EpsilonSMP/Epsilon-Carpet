@@ -31,7 +31,7 @@ import static net.minecraft.world.explosion.Explosion.getExposure;
 public class ExplosionMixin {
 
     @Final @Shadow
-    private static final ExplosionBehavior field_25818 = new ExplosionBehavior();
+    private static final ExplosionBehavior DEFAULT_BEHAVIOR = new ExplosionBehavior();
     @Final @Shadow
     private boolean createFire;
     @Final @Shadow
@@ -76,12 +76,12 @@ public class ExplosionMixin {
             for (int x = 0; x < list.size(); ++x) {
                 Entity entity = list.get(x);
                 if (!entity.isImmuneToExplosion()) {
-                    double y = MathHelper.sqrt(entity.squaredDistanceTo(vec3d)) / q;
+                    double y = Math.sqrt(entity.squaredDistanceTo(vec3d)) / q;
                     if (y <= 1.0D) {
                         double z = entity.getX() - this.x;
                         double aa = (entity instanceof TntEntity ? entity.getY() : entity.getEyeY()) - this.y;
                         double ab = entity.getZ() - this.z;
-                        double ac = MathHelper.sqrt(z * z + aa * aa + ab * ab);
+                        double ac = Math.sqrt(z * z + aa * aa + ab * ab);
                         if (ac != 0.0D) {
                             z /= ac;
                             aa /= ac;
