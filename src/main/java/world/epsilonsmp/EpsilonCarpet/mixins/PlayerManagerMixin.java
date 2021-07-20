@@ -11,6 +11,8 @@ import org.spongepowered.asm.mixin.injection.*;
 public abstract class PlayerManagerMixin{
     @Redirect(method="remove", at = @At(value="FIELD", target = "Lnet/minecraft/entity/Entity;removed:Z", opcode = Opcodes.PUTFIELD))
     private void replaceRemove(Entity entity, boolean value) {
-        entity.removed = !EpsilonCarpetSettings.llamaDupeExploit;
+        if (!EpsilonCarpetSettings.llamaDupeExploit) {
+            entity.setRemoved(Entity.RemovalReason.UNLOADED_WITH_PLAYER);
+        }
     }
 }

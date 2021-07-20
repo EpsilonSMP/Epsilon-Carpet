@@ -19,7 +19,7 @@ import world.epsilonsmp.EpsilonCarpet.EpsilonCarpetSettings;
 @Mixin(EndermanEntity.PickUpBlockGoal.class)
 public abstract class EndermanAntiGriefExceptMelons {// Screw you melons
 
-    @Redirect(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/Block;isIn(Lnet/minecraft/tag/Tag;)Z"))
+    @Redirect(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;isIn(Lnet/minecraft/tag/Tag;)Z"))
     public boolean IsHoldableMelon(BlockState blockState, Tag<Block> tag) {
         return EpsilonCarpetSettings.antiEnderGriefExceptMelon ?
                 blockState.isOf(Blocks.MELON)
