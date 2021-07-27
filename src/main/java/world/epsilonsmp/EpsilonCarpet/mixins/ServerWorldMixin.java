@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.function.Supplier;
 
-@Mixin(ServerWorld.class)
+/*@Mixin(ServerWorld.class)
 public abstract class ServerWorldMixin extends World {
 
     protected ServerWorldMixin(MutableWorldProperties properties, RegistryKey<World> registryRef, DimensionType dimensionType, Supplier<Profiler> profiler, boolean isClient, boolean debugWorld, long seed) {
@@ -55,3 +55,4 @@ public abstract class ServerWorldMixin extends World {
                 serverChunkManager.shouldTickEntity(entity);
     }
 }
+*/

@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Optional;
 
-@Mixin(ShulkerEntity.class)
+/*@Mixin(ShulkerEntity.class)
 public abstract class ShulkerEntityMixin extends GolemEntity {
 
     protected ShulkerEntityMixin(EntityType<? extends GolemEntity> entityType, World world) {
@@ -81,3 +81,4 @@ public abstract class ShulkerEntityMixin extends GolemEntity {
     }
 
 }
+*/

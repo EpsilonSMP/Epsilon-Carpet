@@ -4,12 +4,10 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "AbstractBlockMixin",
-    "AbstractFireBlockMixin",
     "BlockMixin",
     "EndermanAntiGriefExceptMelons",
     "EndGatewayBlockEntityMixin",
     "EndGatewayMixin",
-    "EndSpikeFeatureMixin",
     "ExplosionMixin",
     "FightManagerMixin",
     "FishEntityMixin",
@@ -17,14 +15,11 @@
     "MinecraftServerMixin",
     "PhantomSpawnerMixin",
     "PlayerManagerMixin",
-    "PortalForcerMixin",
     "ProjectileUtilMixin",
     "ServerChunkManagerMixin",
     "ServerScoreboardMixin",
-    "ServerWorldMixin",
     "ShulkerBoxBlockEntityMixin",
     "ShulkerBoxSlotMixin",
-    "ShulkerEntityMixin",
     "TntEntityMixin"
   ],
   "client": [

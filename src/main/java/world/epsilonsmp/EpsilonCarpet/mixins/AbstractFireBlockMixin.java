@@ -8,7 +8,7 @@ import net.minecraft.world.WorldView;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
-
+/*
 @Mixin(AbstractFireBlock.class)
 public class AbstractFireBlockMixin {
 
@@ -19,4 +19,4 @@ public class AbstractFireBlockMixin {
         return blockState.canPlaceAt(world,pos);
     }
 
-}
+}*/

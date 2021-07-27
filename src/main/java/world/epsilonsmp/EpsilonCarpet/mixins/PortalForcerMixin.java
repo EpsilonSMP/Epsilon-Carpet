@@ -19,7 +19,7 @@ import world.epsilonsmp.EpsilonCarpet.utils.DummyGetHelper;
 
 import java.util.function.Predicate;
 import java.util.stream.Stream;
-
+/*
 @Mixin(PortalForcer.class)
 public class PortalForcerMixin
 {
@@ -71,3 +71,4 @@ public class PortalForcerMixin
         return BlockLocating.getLargestRectangle(blockPos, axis1, i, axis2, j, predicate);
     }
 }
+*/
